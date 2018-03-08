@@ -169,7 +169,17 @@ void bitmap_clear_bit(uint8_t *array, uint8_t n);
 )
 #define read_u32le(ptr) (*((uint32_t*)(ptr)))
 
+<<<<<<< HEAD
 #else
+=======
+#ifndef LSB
+#define LSB(x) (x & 0xff)
+#endif
+
+#ifndef MSB
+#define MSB(x) ((x >> 8) & 0xff)
+#endif
+>>>>>>> atmega32u4
 
 /// Read data from pointer as little endian uint16
 #define read_u16le(ptr) (\
